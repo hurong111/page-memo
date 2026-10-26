@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="PageMemo 网页便签备忘录 —— 看到哪，就记到哪。便签自动绑定当前网页，纯本地存储。" />
+  <title>PageMemo 网页便签备忘录</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <!-- ========== 导航 ========== -->
+  <header class="site-header" id="top">
+    <nav class="nav" aria-label="主导航">
+      <a class="brand" href="#top">
+        <!-- 内联 SVG Logo：便签纸 -->
+        <svg class="brand-logo" width="36" height="36" viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+          <rect x="4" y="3" width="28" height="30" rx="3" fill="#FFD966" stroke="#C9A227" stroke-width="1.5"/>
+          <path d="M8 11h20M8 17h16M8 23h12" stroke="#8B7355" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M26 27l4 2v-6l-4 2z" fill="#E8B84A"/>
+        </svg>
+        <span class="brand-text">PageMemo 网页便签</span>
+      </a>
+
+      <button
+        type="button"
+        class="nav-toggle"
+        id="nav-toggle"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+        aria-label="打开菜单"
+      >
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about">产品介绍</a></li>
+        <li><a href="#features">核心功能</a></li>
+        <li><a href="#install">安装步骤</a></li>
+        <li>
+          <a class="nav-cta" href="./download/page-memo.zip" download>下载插件</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ========== Hero ========== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-copy reveal">
+          <h1 id="hero-title">看到哪，就记到哪</h1>
+          <p class="hero-sub">
+            便签自动绑定当前网页，下次打开原页，备忘还在。
+            灵感不用塞进收藏夹，也不用另开记事本。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="./download/page-memo.zip" download>立即安装</a>
+            <a class="btn btn-ghost" href="#features">查看功能</a>
+          </div>
+        </div>
+
+        <!-- 纯 CSS 浏览器 + 侧边便签抽屉示意图 -->
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="mock-browser">
+            <div class="mock-chrome">
+              <span class="mock-dot"></span>
+              <span class="mock-dot"></span>
+              <span class="mock-dot"></span>
+              <div class="mock-url">example.com/article</div>
+            </div>
+            <div class="mock-body">
+              <div class="mock-lines">
+                <span class="mock-line w90"></span>
+                <span class="mock-line w70"></span>
+                <span class="mock-line w85"></span>
+                <span class="mock-line w55"></span>
+                <span class="mock-line w75"></span>
+              </div>
+              <div class="mock-drawer">
+                <div class="mock-sticky s1">记得核对数据来源</div>
+                <div class="mock-sticky s2">明天跟进评论区</div>
+                <div class="mock-sticky s3">✓ 已收藏重点段落</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 产品介绍 ========== -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="section-inner">
+        <header class="section-head reveal">
+          <p class="eyebrow">产品介绍</p>
+          <h2 id="about-title">网页上的灵感，不该一闪就没</h2>
+        </header>
+
+        <div class="pain-grid reveal">
+          <article class="pain-card">
+            <div class="pain-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <circle cx="14" cy="14" r="12" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M14 8v7M14 19.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>灵感易忘</h3>
+            <p>读到一半忽然有想法，关掉标签页就找不回当时的上下文。</p>
+          </article>
+          <article class="pain-card">
+            <div class="pain-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <path d="M6 8h16v14H6z" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M10 5v4M18 5v4M6 12h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>收藏夹太杂</h3>
+            <p>收藏夹塞满却找不到当时为什么存，标题都对不上心里那句话。</p>
+          </article>
+        </div>
+
+        <div class="about-copy reveal">
+          <p>
+            PageMemo 把便签钉在「这一页」上：你在哪儿读，就在哪儿记。
+            再次打开同一网址，侧边抽屉里的备忘原样回来。
+          </p>
+          <p>
+            不必新建文档、不必切换应用。勾选完成、全局翻看、导出备份——
+            数据只存在你的浏览器本地，不上传、不账号。
+          </p>
+          <p>
+            适合阅读笔记、任务备忘、研究摘录，以及任何「跟这个页面绑定才有意义」的碎想法。
+          </p>
+        </div>
+
+        <div class="icon-cards reveal">
+          <article class="icon-card">
+            <span class="icon-card-mark" aria-hidden="true">📌</span>
+            <h3>绑定页面</h3>
+            <p>按 URL 归位，站点与路径一目了然</p>
+          </article>
+          <article class="icon-card">
+            <span class="icon-card-mark" aria-hidden="true">🔒</span>
+            <h3>纯本地</h3>
+            <p>chrome.storage.local，数据不出本机</p>
+          </article>
+          <article class="icon-card">
+            <span class="icon-card-mark" aria-hidden="true">⚡</span>
+            <h3>轻量上手</h3>
+            <p>解压加载即可用，无账号无云同步</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 核心功能 ========== -->
+    <section class="section features" id="features" aria-labelledby="features-title">
+      <div class="section-inner">
+        <header class="section-head reveal">
+          <p class="eyebrow">核心功能</p>
+          <h2 id="features-title">记下来，找得回，管得住</h2>
+          <p class="section-desc">从随手记到导出备份，覆盖日常网页备忘的完整闭环。</p>
+        </header>
+
+        <ul class="feature-grid">
+          <li class="feature-card reveal">
+            <h3>随手记</h3>
+            <p>任意网页右下角「记一笔」，灵感当场落纸，不用切走。</p>
+          </li>
+          <li class="feature-card reveal">
+            <h3>按页面归位</h3>
+            <p>便签与当前 URL 绑定，下次打开同一页，备忘自动出现。</p>
+          </li>
+          <li class="feature-card reveal">
+            <h3>完成勾选</h3>
+            <p>读完、办完就勾掉，待办与已完成一眼分开。</p>
+          </li>
+          <li class="feature-card reveal">
+            <h3>全局管理页</h3>
+            <p>工具栏一键打开全部便签，按站点分组浏览。</p>
+          </li>
+          <li class="feature-card reveal">
+            <h3>搜索筛选</h3>
+            <p>按内容、标题搜索，按未完成 / 已完成筛选。</p>
+          </li>
+          <li class="feature-card reveal">
+            <h3>导出备份</h3>
+            <p>一键导出 JSON 或 TXT，换机或归档心里有底。</p>
+          </li>
+          <li class="feature-card reveal feature-card--wide">
+            <h3>纯本地存储</h3>
+            <p>数据仅保存在本机浏览器，不上传服务器，不依赖账号登录。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== 安装步骤 ========== -->
+    <section class="section install" id="install" aria-labelledby="install-title">
+      <div class="section-inner">
+        <header class="section-head reveal">
+          <p class="eyebrow">安装步骤</p>
+          <h2 id="install-title">四步加载，即可使用</h2>
+          <p class="section-desc">当前为开发者模式安装，打包 zip 后按下列步骤操作。</p>
+        </header>
+
+        <ol class="timeline reveal">
+          <li class="timeline-item">
+            <span class="timeline-num" aria-hidden="true">1</span>
+            <div class="timeline-body">
+              <h3>解压下载包</h3>
+              <p>将 <code>page-memo.zip</code> 解压到任意本地文件夹，保留完整目录结构。</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-num" aria-hidden="true">2</span>
+            <div class="timeline-body">
+              <h3>打开扩展程序页</h3>
+              <p>在地址栏输入 <code>chrome://extensions</code> 并回车（Edge 可用 <code>edge://extensions</code>）。</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-num" aria-hidden="true">3</span>
+            <div class="timeline-body">
+              <h3>开启开发者模式</h3>
+              <p>打开页面右上角「开发者模式」开关。</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <span class="timeline-num" aria-hidden="true">4</span>
+            <div class="timeline-body">
+              <h3>加载已解压的扩展程序</h3>
+              <p>点击「加载已解压的扩展程序」，选择解压后的 <code>extension</code> 文件夹即可。</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== CTA ========== -->
+    <section class="section cta" id="download" aria-labelledby="cta-title">
+      <div class="cta-panel reveal">
+        <h2 id="cta-title">开始在网页上贴便签</h2>
+        <p>本地存储、不上传，解压加载即可用。</p>
+        <a class="btn btn-primary btn-lg" href="./download/page-memo.zip" download>下载插件</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== 页脚 ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 PageMemo 网页便签备忘录</p>
+      <p class="footer-links">
+        <a href="https://github.com/yourname/page-memo" rel="noopener noreferrer" target="_blank">GitHub</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>

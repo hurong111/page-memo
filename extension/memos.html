@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PageMemo · 全部便签</title>
+  <link rel="stylesheet" href="memos.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <h1>PageMemo</h1>
+        <p class="subtitle">全部便签</p>
+      </div>
+      <div class="toolbar">
+        <input
+          type="search"
+          id="search"
+          class="search"
+          placeholder="搜索内容或站点标题…"
+          autocomplete="off"
+        />
+        <select id="filter" class="filter" aria-label="筛选状态">
+          <option value="all">全部</option>
+          <option value="todo">未完成</option>
+          <option value="done">已完成</option>
+        </select>
+        <button type="button" id="export-json" class="btn">导出 JSON</button>
+        <button type="button" id="export-txt" class="btn">导出 TXT</button>
+        <button type="button" id="clear-done" class="btn btn-danger">清除已完成</button>
+      </div>
+    </header>
+
+    <main id="groups" class="groups" aria-live="polite"></main>
+
+    <div id="empty" class="empty-state" hidden>
+      <p class="empty-title">还没有便签</p>
+      <p class="empty-desc">在任意网页点击右下角「记一笔」开始记录吧。</p>
+    </div>
+  </div>
+  <script src="memos.js"></script>
+</body>
+</html>

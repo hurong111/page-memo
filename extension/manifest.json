@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "PageMemo 网页便签备忘录",
+  "version": "1.0.0",
+  "description": "在任意网页记录便签，按页面与站点管理，支持导出备份。",
+  "permissions": ["storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "打开全部便签"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}
